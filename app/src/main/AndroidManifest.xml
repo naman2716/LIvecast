@@ -15,12 +15,16 @@
 -->
 
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.google.android.apps.watchme">
+    package="com.google.android.apps.youtubeStream">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+
     <!-- For authorization. -->
     <uses-permission android:name="android.permission.GET_ACCOUNTS" />
+<!--    <uses-permission android:name="android.permission.READ_CONTACTS"/>-->
+<!--    <uses-permission android:name="android.permission.WRITE_CONTACTS"/>-->
+
     <!-- For recording audio and video without going to lock. -->
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -28,10 +32,10 @@
 
     <uses-feature
         android:name="android.hardware.camera"
-        android:required="false"></uses-feature>
+        android:required="false" />
     <uses-feature
         android:name="android.hardware.camera.front"
-        android:required="false"></uses-feature>
+        android:required="false" />
 
     <application
         android:allowBackup="true"
@@ -39,21 +43,19 @@
         android:label="@string/app_name"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.google.android.apps.watchme.MainActivity"
+            android:name="com.google.android.apps.youtubeStream.MainActivity"
             android:configChanges="orientation|screenSize"
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
         <activity
-            android:name="com.google.android.apps.watchme.StreamerActivity"
+            android:name="com.google.android.apps.youtubeStream.StreamerActivity"
             android:label="@string/app_name"
-            android:screenOrientation="landscape"></activity>
+            android:screenOrientation="landscape" />
 
-        <service android:name="com.google.android.apps.watchme.StreamerService" />
+        <service android:name="com.google.android.apps.youtubeStream.StreamerService" />
     </application>
-
 </manifest>
